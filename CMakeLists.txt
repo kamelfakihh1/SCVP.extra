@@ -20,7 +20,8 @@ set(SYSTEMC_AMS_INCLUDE $ENV{SYSTEMC_AMS_HOME}/include)
 #set(SYSTEMC_INCLUDE /opt/systemc/include) # Uncomment for macOS
 #set(SYSTEMC_AMS_INCLUDE /opt/systemc-ams/include) # Uncomment for macOS
 
-add_subdirectory(tlm_at_initiator_interconnect_target)
+add_subdirectory(tlm_simple_sockets)
+# add_subdirectory(tlm_at_initiator_interconnect_target)
 add_subdirectory(tlm_protocol_checker)
 add_subdirectory(tlm_memory_manager)
 

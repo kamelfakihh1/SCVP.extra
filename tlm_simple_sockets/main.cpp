@@ -15,12 +15,12 @@ int sc_main (int, char **)
     memory<512> memory0("memory0");
     memory<512> memory1("memory1");
 
-    interconnect<2,2> bus("bus0");
+    interconnect bus("bus0");
 
-    cpu0.iSocket.bind(bus.tSocket[0]);
-    cpu1.iSocket.bind(bus.tSocket[1]);
-    bus.iSocket[0].bind(memory0.tSocket);
-    bus.iSocket[1].bind(memory1.tSocket);    
+    cpu0.iSocket.bind(bus.tSocket);
+    cpu1.iSocket.bind(bus.tSocket);
+    bus.iSocket.bind(memory0.tSocket);
+    bus.iSocket.bind(memory1.tSocket);
 
     // std::cout << std::endl << "Name "
     //           << std::setfill(' ') << std::setw(10)
