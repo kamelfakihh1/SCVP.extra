@@ -1,4 +1,4 @@
-add_executable(target_at_intiator_interconnect_target
+add_executable(tlm_at_intiator_interconnect_target
 main.cpp
 memory.h
 processor.h
@@ -8,10 +8,10 @@ interconnect.h
 ../tlm_protocol_checker/tlm2_base_protocol_checker.h
 )
 
-target_include_directories(target_at_intiator_interconnect_target
+target_include_directories(tlm_at_intiator_interconnect_target
     PRIVATE ${SYSTEMC_INCLUDE}
 )
 
-target_link_libraries(target_at_intiator_interconnect_target
+target_link_libraries(tlm_at_intiator_interconnect_target
     PRIVATE ${SYSTEMC_LIBRARY}
 )

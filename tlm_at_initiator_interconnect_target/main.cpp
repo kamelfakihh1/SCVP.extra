@@ -4,13 +4,23 @@
 
 #include "memory.h"
 #include "processor.h"
-// #include "interconnect.h"
+#include "interconnect.h"
 
 
 int sc_main (int, char **)
 {
     processor cpu0("cpu0");    
-    memory<1024> memory0("memory0");
+    processor cpu1("cpu1");
+
+    memory<512> memory0("memory0");
+    memory<512> memory1("memory1");
+
+    interconnect<2,2> bus("bus0");
+
+    cpu0.iSocket.bind(bus.tSocket[0]);
+    cpu1.iSocket.bind(bus.tSocket[1]);
+    bus.iSocket[0].bind(memory0.tSocket);
+    bus.iSocket[1].bind(memory1.tSocket);
 
     cpu0.iSocket.bind(memory0.tSocket);    
 
